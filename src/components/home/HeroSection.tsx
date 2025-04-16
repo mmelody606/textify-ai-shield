@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, AlertCircle } from "lucide-react";
@@ -16,7 +17,7 @@ const HeroSection = () => {
                 <Shield className="mr-1 h-4 w-4" /> Trusted by 10,000+ Students & Professionals
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand mb-6 tracking-tight">
-                Detect Plagiarism & AI Content{" "}
+                Get your Plagiarism report & AI content report instantly!{" "}
                 <span className="text-brand-blue">Instantly!</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8">
