@@ -7,14 +7,12 @@ import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
 import FAQSection from "@/components/home/FAQSection";
 import CTASection from "@/components/home/CTASection";
 import ComparisonSection from "@/components/home/ComparisonSection";
-import FreeTrialSection from "@/components/home/FreeTrialSection";
 
 const Index = () => {
   return (
     <Layout>
       <HeroSection />
       <HowItWorksSection />
-      <FreeTrialSection />
       <WhyChooseUsSection />
       <PricingSection />
       <ComparisonSection />
