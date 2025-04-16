@@ -1,15 +1,13 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -25,22 +23,12 @@ const Navbar = () => {
             <Link to="/" className="text-gray-700 hover:text-brand-blue font-medium">
               Home
             </Link>
-            <div className="relative group">
-              <button 
-                onClick={toggleDropdown}
-                className="flex items-center text-gray-700 hover:text-brand-blue font-medium"
-              >
-                Services <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className={`${isDropdownOpen ? "block" : "hidden"} md:hidden md:group-hover:block absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden z-20`}>
-                <Link to="/ai-report" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                  AI Detection
-                </Link>
-                <Link to="/plagiarism-report" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                  Plagiarism Check
-                </Link>
-              </div>
-            </div>
+            <Link to="/ai-report" className="text-gray-700 hover:text-brand-blue font-medium">
+              AI Detection
+            </Link>
+            <Link to="/plagiarism-report" className="text-gray-700 hover:text-brand-blue font-medium">
+              Plagiarism Check
+            </Link>
             <Link to="/about" className="text-gray-700 hover:text-brand-blue font-medium">
               About
             </Link>
@@ -85,31 +73,20 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <button
-              className="flex w-full items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-              onClick={toggleDropdown}
+            <Link 
+              to="/ai-report" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+              onClick={toggleMenu}
             >
-              Services
-              <ChevronDown className={`${isDropdownOpen ? "transform rotate-180" : ""} h-4 w-4 transition-transform`} />
-            </button>
-            {isDropdownOpen && (
-              <div className="pl-4">
-                <Link 
-                  to="/ai-report" 
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={toggleMenu}
-                >
-                  AI Detection
-                </Link>
-                <Link 
-                  to="/plagiarism-report" 
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={toggleMenu}
-                >
-                  Plagiarism Check
-                </Link>
-              </div>
-            )}
+              AI Detection
+            </Link>
+            <Link 
+              to="/plagiarism-report" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+              onClick={toggleMenu}
+            >
+              Plagiarism Check
+            </Link>
             <Link 
               to="/about" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
@@ -146,3 +123,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
