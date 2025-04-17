@@ -22,18 +22,24 @@ const HeroSection = () => {
                 <span className="text-brand-blue">Instantly!</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8">
-                The most accurate, fastest, and affordable plagiarism and AI content detector. Protect your academic integrity and professional reputation.
+                The most accurate, fastest, and affordable plagiarism and AI content checking service. Protect your academic integrity and professional reputation.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild className="bg-brand-blue hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg text-lg">
-                  <Link to="/#pricing">
+                  <Link to="/#pricing" onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  }}>
                     Check Plagiarism Now <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="border-brand-blue text-brand-blue hover:bg-blue-50 font-medium px-6 py-3 rounded-lg text-lg">
-                  <Link to="/#pricing">
-                    Detect AI Content <AlertCircle className="ml-2 h-5 w-5" />
+                <Button asChild variant="outline" className="border-brand-blue text-brand-blue hover:bg-blue-600 font-medium px-6 py-3 rounded-lg text-lg">
+                  <Link to="/#pricing" onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  }}>
+                    Check AI Content Now <AlertCircle className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </div>
